@@ -5,11 +5,16 @@ var current_pos=setInterval(function initMap() {
     for (var i=0;i<data.people.length;i++){
             if (data.people[i].craft=='ISS'){
                 $('#persons').append('<div id="unit_'+i+'">');
-                $('#unit_'+i).text(data.people[i].name);
-                $('#unit_'+i).css('padding','10px');
+                $('#unit_'+i).append('<div class="img">');
+                $('#unit_'+i).append('<div id="name_'+i+'">'); 
+                $('#unit_'+i).attr('class','d-flex unit'); 
+                $('#name_'+i).attr('class','_align');
+                $('#name_'+i).text(data.people[i].name);
+                $('#unit_'+i).css('padding','4px');
                 $('#unit_'+i).css('border','2px solid black');
                 $('#unit_'+i).css('margin-bottom','15px');
                 $('#unit_'+i).css('border-radius','5px');
+                
             }
         }
         k=data.people.langth;
