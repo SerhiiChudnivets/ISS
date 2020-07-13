@@ -1,6 +1,6 @@
 var k=0;
 var current_pos=setInterval(function initMap() {
-    $.getJSON('http://api.open-notify.org/astros.json', function(data) {    
+    $.getJSON('https://api.open-notify.org/astros.json', function(data) {    
     if (k!=data.people.langth){
     for (var i=0;i<data.people.length;i++){
             if (data.people[i].craft=='ISS'){
@@ -21,7 +21,7 @@ var current_pos=setInterval(function initMap() {
     }
         $('#total').text('Total amount: '+data.people.length+' people on ISS')
     });
-    $.getJSON('http://api.open-notify.org/iss-now.json', function(data) {
+    $.getJSON('https://api.open-notify.org/iss-now.json', function(data) {
         var myLatLng = {lat: -25.363, lng: 131.044};
             myLatLng.lat=Number(data.iss_position.latitude);
             $('#latitude').text('Latitude: '+myLatLng.lat);
